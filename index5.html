@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let resultado;
+      alert("Bem-vindo a CALCULADORA DO PAULINHO");
+      let operacao = prompt(
+        "INSTRUÇÕES: Selecione a operação matemática desejada digitando seu respectivo símbolo: SOMA +; SUBTRAÇÃO -; DIVISÃO /; MULTIPLICAÇÃO *."
+      );
+      let numero1 = prompt("Digite o primeiro número da expressão:");
+      let numero2 = prompt("Digite o segundo número da expressão:");
+      //   console.log("resultado " + resultado); VERIFICANDO O QUE CADA VARIÁVEL TÁ RECEBENDO
+      //   console.log("operacao " + operacao);
+      //   console.log("numero1 " + numero1);
+      //   console.log("numero2 " + numero2);
+      if (operacao == "+") {
+        // console.log("resultado " + resultado);
+        resultado = Number(numero1) + Number(numero2);
+        // console.log("resultado " + resultado);
+        alert(
+          "O resultado da expressão " +
+            numero1 +
+            "+" +
+            numero2 +
+            " é " +
+            resultado
+        );
+      } else if (operacao == "-") {
+        resultado = Number(numero1) - Number(numero2);
+        alert(
+          "O resultado da expressão " +
+            numero1 +
+            "-" +
+            numero2 +
+            " é " +
+            resultado
+        );
+      } else if (operacao == "/") {
+        resultado = Number(numero1) / Number(numero2);
+        if (numero2 == 0) {
+          alert(
+            "O resultado da expressão " +
+              numero1 +
+              "/" +
+              numero2 +
+              " não é válido, pois todo número divido por 0 é inválido."
+          );
+        } else {
+          alert(
+            "O resultado da expressão " +
+              numero1 +
+              "/" +
+              numero2 +
+              " é " +
+              resultado
+          );
+        }
+      } else if (operacao == "*") {
+        resultado = Number(numero1) * Number(numero2);
+        alert(
+          "O resultado da expressão " +
+            numero1 +
+            "*" +
+            numero2 +
+            " é " +
+            resultado
+        );
+      }
+    </script>
+  </body>
+</html>

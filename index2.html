@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nota = prompt("Qual nota você tirou?");
+      if (nota == "10") {
+        alert("Parabéns, você acertou tudo!");
+      } else if (nota >= 6 && nota <= 9) {
+        alert("Você está acima da média!");
+      } else if (nota == 5) {
+        alert("Poxa, por 1 ponto você não alcançou a média!");
+      } else if (nota >= 0 && nota <= 4) {
+        alert("Você está abaixo da média!");
+      } else {
+        alert("Dígito inválido.");
+      }
+    </script>
+  </body>
+</html>

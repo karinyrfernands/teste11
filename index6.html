@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador Eleitoral</title>
+  </head>
+  <body>
+    <script>
+      alert(
+        "VERIFICADOR ELEITORAL: Descubra qual é sua situação eleitoral atual clicando em OK."
+      );
+      let idadeInput = prompt(
+        "Digite sua idade em anos (Exemplo: 0; 20; 43; etc):"
+      );
+      let idade = parseInt(idadeInput);
+      //Essa função parseInt analisa uma string e retorna um número inteiro.
+      if (isNaN(idade) || idade < 0) {
+        //"is Not a Number" (é Não é um Número). Essa função isNaN verifica se o valor passado como argumento não é um número válido.
+        alert("A informação inserida é inválida. Tente novamente.");
+      } else if (idade >= 0 && idade < 15) {
+        alert(
+          "Situação atual: Voto proibido. Para mais informações acesse: www.gov.br"
+        );
+      } else if (idade == 15) {
+        alert(
+          "Situação atual: Voto proibido, mas é possivel tirar o título de eleitor em caso de completar 16 anos até o dia da eleição! Para mais informações acesse: www.gov.br"
+        );
+      } else if (idade == 16 || idade == 17 || idade >= 70) {
+        alert(
+          "Situação atual: Voto facultativo. Para mais informações acesse: www.gov.br"
+        );
+      } else if (idade >= 18 && idade < 70) {
+        alert(
+          "Situação atual: Voto obrigatório. Para mais informações acesse: www.gov.br"
+        );
+      } else {
+        alert("A informação inserida é inválida.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+🛍️ Feature: Calculadora de Desconto para Sistema de Loja
+User Story
+Como cliente de uma loja online
+Eu quero calcular automaticamente o desconto do meu produto
+Para que eu saiba exatamente quanto vou pagar antes de finalizar a compra
+Critérios de Aceitação
+Cenário 1: Desconto por Faixa de Valor
+
+Dado que o cliente informa o valor do produto
+Quando o valor for maior que R$ 100,00
+Então aplicar 10% de desconto
+E mostrar o valor original, desconto aplicado e valor final
+
+Cenário 2: Desconto por Categoria de Cliente
+
+Dado que o cliente informa se é cliente VIP (boolean)
+Quando for cliente VIP
+Então aplicar desconto adicional de 5%
+Senão manter apenas o desconto por valor
+
+Cenário 3: Validação de Entrada
+
+Dado que o cliente informa dados inválidos
+Quando o valor for menor ou igual a zero
+Então mostrar mensagem de erro: "Valor deve ser maior que zero"
+
+Especificações Técnicas
+Entrada do Sistema:
+- valorProduto (number)
+- nomeCliente (string) 
+- isClienteVIP (boolean)
+Processamento:
+1. Validar se valorProduto > 0
+2. SE valorProduto > 100 ENTÃO desconto = 10%
+3. SE isClienteVIP = true ENTÃO desconto adicional = 5%
+4. Calcular valor final
+5. Concatenar mensagem de resultado
+Saída Esperada:
+"Olá [NOME]! 
+Valor original: R$ [VALOR]
+Desconto aplicado: [PERCENTUAL]% (R$ [VALOR_DESCONTO])
+Valor final: R$ [VALOR_FINAL]
+Status: [Cliente VIP / Cliente Regular]"
+Exemplos de Teste
+Teste 1 - Cliente Regular, Produto Caro
+
+Entrada: valorProduto = 150, nomeCliente = "João", isClienteVIP = false
+Saída Esperada:
+"Olá João!
+Valor original: R$ 150.00
+Desconto aplicado: 10% (R$ 15.00)
+Valor final: R$ 135.00
+Status: Cliente Regular"
+
+
+Teste 2 - Cliente VIP, Produto Caro
+
+Entrada: valorProduto = 200, nomeCliente = "Maria", isClienteVIP = true
+Saída Esperada:
+"Olá Maria!
+Valor original: R$ 200.00
+Desconto aplicado: 15% (R$ 30.00)
+Valor final: R$ 170.00
+Status: Cliente VIP"
+
+
+Teste 3 - Produto Barato
+
+Entrada: valorProduto = 50, nomeCliente = "Pedro", isClienteVIP = false
+Saída Esperada:
+"Olá Pedro!
+Valor original: R$ 50.00
+Desconto aplicado: 0% (R$ 0.00)
+Valor final: R$ 50.00
+Status: Cliente Regular"
+
+
+Teste 4 - Erro de Validação
+
+Entrada: valorProduto = -10
+Saída Esperada: "Erro: Valor deve ser maior que zero"
